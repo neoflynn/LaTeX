@@ -1,0 +1,8 @@
+# Exclure tous les fichiers de compilation :
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.pdf
+*.synctex.gz

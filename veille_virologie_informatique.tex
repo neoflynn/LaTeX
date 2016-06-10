@@ -1,0 +1,152 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{url}
+\author{Patrice Pezas}
+\title{\'Etat de l'art sur la virologie informatique}
+
+\begin{document}
+	
+\section{Introduction}
+\subsection{\`{A} qui s'adresse ce document ?}
+\subsection{Que faut-il attendre de ce document ?}
+\subsection{De quelle façon lire ce document ?}
+
+\section{Vocabulaire et mots-clés}
+
+Tentative d'énumération des noms des types de logiciels malveillants que l'on peut trouver lorsque l'on parcourt le web à ce sujet : 
+\begin{description}
+	\item[Virus] description
+	\item[Worm] description
+	\item[File binder] description
+	\item[Runtime Packer] description
+	\item[Trojan Horse] description
+	\item[Rootkit] description
+	\item[Ransomware] description
+	\item[Spyware] description
+	\item[Scareware] description
+	\item[Browser Hijacker] description
+	\item[Rogue Security Software] description
+	\item[Downloader] description
+	\item[Dropper] description
+	\item[Logic Bomb] description
+	\item[Keylogger] description
+	\item[Backdoor] description
+	\item[Sniffer] description
+	\item[Botnet] description
+	\item[StegoMalware] description
+	\item[label] description
+	\item[label] description
+	\item[label] description
+\end{description}
+
+% Comment les logiciels malveillants procèdent-ils pour infecter un fichier ?
+\section{Techniques d'infection}
+
+% Comment les logiciels malveillants traversent-ils les protections ?
+\section{Techniques d'évasion}
+
+% Comment les logiciels malveillants procèdent-ils pour être invisible sur un système ?
+\section{Techniques de dissimulation}
+
+% Comment les logiciels malveillants communiquent-ils avec le serveur ou le pirate ?
+\section{Techniques de communication}
+
+% Comment les logiciels malveillants se propagent-ils ?
+\section{Techniques de propagation}
+
+% Comment les logiciels malveillants se protègent-ils des analystes ?
+\section{Techniques de protection}
+\subsection{Anti-bac-à-sable (ou Anti-Sandbox)}
+\subsubsection{Ports d'entrées/sorties VMWare (ou VMWare I/O Port)} 
+ \input{./protection_technics/anti-sandbox/vmware_io_port.tex}
+\subsubsection{Instructions spécifiques à VirtualPC}                
+ \input{./protection_technics/anti-sandbox/virtualpc_instructions.tex}
+\subsubsection{Check Descriptor Table Registers}                    
+ \input{./protection_technics/anti-sandbox/descriptors_table_registers.tex}
+\subsubsection{DLL Scanning}                                        
+ \input{./protection_technics/anti-sandbox/dll_scanning.tex}
+\subsubsection{Product ID Check}                                    
+ \input{./protection_technics/anti-sandbox/product_id.tex}
+
+\subsection{Anti-désassemblage (ou Anti-Disassembly)}
+\subsubsection{Fonction en ligne (ou Inline Function)} 
+ \input{./protection_technics/anti-disassembly/inline_function.tex}
+\subsubsection{Ajout de code inutile (ou Junk Code)}   
+ \input{./protection_technics/anti-disassembly/junk_code.tex}
+
+\subsection{Anti-débogage (ou Anti-Debugging)}
+\subsubsection{Point d'arrêt logiciel}                                   
+ \input{./protection_technics/anti-debugging/software_breakpoint.tex}
+\subsubsection{Point d'arrêt mémoire}                                    
+ \input{./protection_technics/anti-debugging/memory_breakpoint.tex}
+\subsubsection{Point d'arrêt matériel}                                   
+ \input{./protection_technics/anti-debugging/hardware_breakpoint.tex}
+\subsubsection{Timing Attack}                                            
+ \input{./protection_technics/anti-debugging/timing_attack.tex}
+\subsubsection{Windows Internals}                                        
+ \input{./protection_technics/anti-debugging/windows_internals.tex}
+\subsubsection{Permutations de code natif (ou Native Code Permutations)} 
+ \input{./protection_technics/anti-debugging/native_code_permutations.tex}
+\subsubsection{Calcul de codes correcteurs (ou Checksums Calculation)}   
+ \input{./protection_technics/anti-debugging/checksums_calculation.tex}
+\subsubsection{Exploitation de processus (ou Processus Exploitation)}    
+ \input{./protection_technics/anti-debugging/processus_exploitation.tex}
+\subsubsection{Manipulation du préfixe des instructions}                 
+ \input{./protection_technics/anti-debugging/prefixe_manipulation.tex}
+\subsubsection{Auto-déchargement de mémoire (ou Self-Unmapping)}         
+ \input{./protection_technics/anti-debugging/self_unmapping.tex}
+
+\subsection{Anti-déchargement de mémoire (ou Anti-Memory-Dump)}
+\subsubsection{Techniques nanomites}       
+ \input{./protection_technics/anti-memory-dump/nanomites_technics.tex}
+\subsubsection{Stolen Bytes (Stolen code)} 
+ \input{./protection_technics/anti-memory-dump/stolen_code.tex}
+\subsubsection{SizeOfImage}                
+ \input{./protection_technics/anti-memory-dump/image_size.tex}
+\subsubsection{Machine Virtuelle}          
+ \input{./protection_technics/anti-memory-dump/virtual_machine.tex}
+\subsubsection{Guard Pages}                
+ \input{./protection_technics/anti-memory-dump/guard_pages.tex}
+\subsubsection{Remove PE Header}           
+ \input{./protection_technics/anti-memory-dump/remove_pe_header.tex}
+	
+\newpage	
+
+\bibliography{veille_virologie_informatique}
+\bibliographystyle{plain}
+
+%%%%%%%%%%
+% Livres %
+%%%%%%%%%%
+\nocite{FILIOL1}
+\nocite{FILIOL2}
+\nocite{FERRIE1}
+
+%%%%%%%%%%%%%
+% Sites web %
+%%%%%%%%%%%%%
+\nocite{VXHEAVEN1}
+\nocite{CODEPROJECT1}
+\nocite{INFOSECINSTITUTE1}
+\nocite{MALWAREBYTES1}
+\nocite{ANTUKH1}
+\nocite{SYMANTEC1}
+\nocite{SPARECLOCKCYCLES1}
+\nocite{SECURITYXPLODED1}
+\nocite{INFOSECINSTITUTE2}
+\nocite{OPENSECURITYRESEARCH1}
+\nocite{JBREMER1}
+\nocite{HACKADEMICS1}
+\nocite{OMNISECU1}
+\nocite{VANISH1}
+\nocite{INFOSECTODAY1}
+\nocite{STEGOMALWARE1}
+\nocite{KASPERSKY1}
+
+\end{document}
